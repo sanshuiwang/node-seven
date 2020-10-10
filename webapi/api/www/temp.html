@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover"
+    />
+    <meta
+      http-equiv="Cache-control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Demo</title>
+
+    <script src="./jquery.min.js"></script>
+  </head>
+  <body>
+    用户名：<input type="text" id="username" /><br />
+    密码：<input type="password" id="password" /><br />
+    <button id="login">登录</button><br />
+    <button id="reg">注册</button><br />
+
+    <script>
+      $("#login").click(function () {
+        $.ajax({
+          url: "/login",
+          data: {
+            username: $("#username").val(),
+            password: $("#password").val(),
+          },
+          dataType: "json",
+          success(res) {
+            alert(res.msg);
+          },
+        });
+      });
+
+      $("#reg").click(function () {
+        $.ajax({
+          url: "/reg",
+          data: {
+            username: $("#username").val(),
+            password: $("#password").val(),
+          },
+          dataType: "json",
+          method: "post",
+          success(res) {
+            alert(res.msg);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

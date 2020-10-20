@@ -1,0 +1,10 @@
+{
+  "name": "node-debugger",
+  "version": "1.0.0",
+  "main": "app02.js",
+  "author": "wangyang",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

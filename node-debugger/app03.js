@@ -2,7 +2,14 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  const a = 3;
+  let a = 3;
+  function b() {
+    a += 1;
+  }
+  function c() {
+    b();
+  }
+  c();
   res.send(`Hello ${a}`);
 });
 

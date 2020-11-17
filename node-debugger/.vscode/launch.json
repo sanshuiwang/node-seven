@@ -1,0 +1,23 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "name": "启动http的app04",
+      "program": "${workspaceFolder}/app04.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "测试命令行脚本",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/cmd.js",
+      "args": ["init"]
+    }
+  ]
+}

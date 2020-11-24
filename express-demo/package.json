@@ -1,0 +1,7 @@
+{
+  "name": "express-demo",
+  "version": "1.0.0",
+  "description": "demo study",
+  "main": "index.js",
+  "license": "MIT"
+}

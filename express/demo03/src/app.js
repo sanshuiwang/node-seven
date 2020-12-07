@@ -14,7 +14,6 @@ app.get("/name/:age", (req, res) => {
     name: "Ocean",
     age,
   });
-  // res.send("汪洋&Ocean");
 });
 
 app.post("/name", (req, res) => {

@@ -56,7 +56,7 @@ const app = express();
 //   });
 // });
 
-// // app.all 无论通过什么请求方式(get/post/delete/put)都可以响应
+// // app.all 无论通过什么uri&请求方式(get/post/delete/put)都可以响应
 // app.all("*", (req, res) => {
 //   res.json({
 //     message: "all *",

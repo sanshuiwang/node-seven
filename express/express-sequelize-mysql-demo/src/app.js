@@ -1,16 +1,54 @@
 const express = require("express");
 
-const userRouter = require("./router/user_router.js");
+// const userRouter = require("./router/user_router.js");
 
 const app = express();
 
+const models = require("../models");
+/**
+ * models.User // user对象属性
+ * models.Sequlize  // 对象属性
+ * models.sequlize // 实例
+ */
+
+app.get("/create", async (req, res) => {
+  const { name } = req.query;
+  let user = await models.User.create({
+    name,
+  });
+  console.log("user: ", user);
+  res.json({
+    message: "创建成功",
+    user,
+  });
+});
+
+app.get("/list", async (req, res) => {
+  let list = await models.User.findAll();
+  res.json({
+    list,
+  });
+});
+
+app.get("/detail/:id", async (req, res) => {
+  let { id } = req.params;
+  let user = await models.User.findOne({
+    where: {
+      id,
+    },
+  });
+  res.json({
+    user,
+  });
+});
+
 // 自定义中间件
-function log_middleware(req, res, next) {
-  console.log("请求来了 -- app log");
-  next();
-}
-app.use(log_middleware);
-app.use("/user", userRouter);
+// function log_middleware(req, res, next) {
+//   console.log("请求来了 -- app log");
+//   next();
+// }
+// app.use(log_middleware);
+// app.use("/user", userRouter);
 //express自己的中间件：加载一个文件的 static中间件
 // app.use(
 //   express.static("static", {
@@ -19,8 +57,8 @@ app.use("/user", userRouter);
 // );
 //向 express.static 函数提供的路径相对于您在其中启动 node 进程的目录
 //如果从另一个目录运行 Express 应用程序，那么对于提供资源的目录使用绝对路径会更安全
-console.log("__dirname:: ", __dirname + "/static");
-app.use("/", express.static(__dirname + "/static"));
+// console.log("__dirname:: ", __dirname + "/static");
+// app.use("/", express.static(__dirname + "/static"));
 
 //第三方中间件,例: cookie-parser
 

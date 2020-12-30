@@ -41,3 +41,16 @@ show tables;
 ```
     select * from 表名;
 ```
+
+mysql
+结构化数据库，数据存放的服务。
+
+数据库： 划分的存储区域
+
+table: 存数据集合
+
+---
+
+ORM(对象关系模型) 库有 sequelize
+
+node-app --> ORM(sequelize) --> 驱动(node-mysql)[mysql2] --> mysql db

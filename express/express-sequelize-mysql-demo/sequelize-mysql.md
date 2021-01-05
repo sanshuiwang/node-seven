@@ -54,3 +54,15 @@ table: 存数据集合
 ORM(对象关系模型) 库有 sequelize
 
 node-app --> ORM(sequelize) --> 驱动(node-mysql)[mysql2] --> mysql db
+
+# sequelize
+
+`npm install --save sequelize`
+
+v6:
+
+`npm install --save-dev sequelize-cli`
+
+初始化 sequelize 的各个文件
+
+`npx sequelize-cli init`
